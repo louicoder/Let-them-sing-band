@@ -1,0 +1,11 @@
+#add-song-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  // justify-content: space-between;
+}
+
+#songs-container {
+  width: 100%;
+}

@@ -8,8 +8,10 @@
 #side-bar-container {
   display: flex;
   width: 30%;
-  background-color: #eee;
-  padding: 20px;
+  // background-color: #eee;
+  border-right: .5px solid #eee;
+
+  padding: 50px 20px;
   box-sizing: border-box;
   flex-direction: column;
   // border: 1px solid black;
@@ -19,14 +21,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #ddd;
+  background-color: #eee;
   margin-bottom: 10px;
   padding: 10px 20px;
   border-radius: 5px;
 
   &:hover {
     cursor: pointer;
-    background-color: #ccc;
+    background-color: #ddd;
   }
 }
 
@@ -40,6 +42,10 @@
 }
 
 #main-content-container {
+  padding: 50px 20px;
   width: 70%;
   display: flex;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  // background-color: rgb(247, 247, 247);
 }
