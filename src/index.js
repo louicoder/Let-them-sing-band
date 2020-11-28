@@ -12,8 +12,6 @@ require('./Store/FirebaseConfig');
 
 const store = init({ models, plugins: [ LoadingPlugin({ asNumber: false }) ] });
 
-// console.log('Firebase', auth);
-
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

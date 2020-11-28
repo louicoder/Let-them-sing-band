@@ -6,17 +6,17 @@ import AllSongs from './AllSongs';
 import EditSong from './EditSong';
 import './styles.scss';
 
-const Songs = () => {
-  const [ state, setState ] = React.useState({ mode: 'add' });
+const Songs = ({ setProgress, setVisible }) => {
+  const [ state, setState ] = React.useState({ mode: 'view' });
 
   const renderComponent = () => {
     switch (state.mode) {
       case 'view':
-        return <AllSongs />;
+        return <AllSongs addNewSong={() => setState({ ...state, mode: 'add' })} />;
       case 'edit':
         return <EditSong />;
       case 'add':
-        return <AddSong />;
+        return <AddSong setProgress={setProgress} setVisible={setVisible} />;
     }
   };
   return (
@@ -27,13 +27,18 @@ const Songs = () => {
           alignItems: 'center',
           width: '100%',
           justifyContent: 'space-between',
-          padding: '10px 0px',
+          padding: '10px 0px 30px',
           marginBottom: '30px',
           borderBottom: '1px solid #ddd'
         }}
       >
         <span style={{ fontWeight: '600' }}>Add a new song to your collection</span>
-        <SVGComp path={Icon.close} hover styles={{ display: 'none' }} />
+        <SVGComp
+          path={Icon.close}
+          hover
+          styles={{ display: state.mode !== 'view' ? 'flex' : 'none' }}
+          onClick={() => setState({ ...state, mode: 'view' })}
+        />
       </div>
       {renderComponent()}
     </div>

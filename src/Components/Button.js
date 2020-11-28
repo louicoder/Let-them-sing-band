@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.scss';
 
-const Button = ({ title, fileSelector = false, onChange, btnStyles, onClick, loading, acceptedFiles, selectFile }) => {
+const Button = ({ title, btnStyles, onClick, loading }) => {
   return (
     <button
       component="label"
@@ -11,11 +11,7 @@ const Button = ({ title, fileSelector = false, onChange, btnStyles, onClick, loa
       disabled={loading}
       id="button-container"
     >
-      {/* {loading && <span style={{ fontSize: '20px' }}>Loading...</span>} */}
-      {title}
-      {/* {fileSelector && (
-        <input accept={acceptedFiles} type="file" style={{ display: 'none', flex: 1 }} onChange={selectFile} />
-      )} */}
+      {loading ? 'Loading, please wait....' : title}
     </button>
   );
 };

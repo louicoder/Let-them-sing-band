@@ -1,11 +1,85 @@
 #add-song-container {
-  width: 100%;
+  width: 50%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   // justify-content: space-between;
 }
 
-#songs-container {
+#songs-inner-container {
   width: 100%;
+  border: 1px solid black;
+  // background-color: blueviolet;
+  display: flex;
+}
+#add-song-container {
+  width: 50%;
+  // border: 1px solid black;
+}
+#songs-info-container {
+  width: 50%;
+  display: flex;
+  // border: 1px solid red;
+  padding: 0px 50px 0px;
+  flex-direction: column;
+  span {
+    &:first-child {
+      margin-bottom: 20px;
+    }
+  }
+}
+#songs-container {
+  // border: 1px solid green;
+  width: 100%;
+  // display: flex;
+  // flex-direction: column;
+}
+
+#main-add-song-container {
+  width: 100%;
+  // border: 1px solid black;
+  display: flex;
+}
+
+#all-songs-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  span {
+    font-weight: 600;
+    font-size: 20px;
+  }
+}
+
+#all-songs-audio-container {
+  display: flex;
+  align-items: center;
+}
+
+#table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 30px;
+  td,
+  th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 15px;
+  }
+
+  tr {
+    // background-color: #eee;
+    &:hover {
+      background-color: #eee;
+    }
+  }
+
+  tr {
+    &:hover {
+      cursor: pointer;
+      border: 1px solid black;
+      // background-color: #ccc;
+    }
+  }
 }

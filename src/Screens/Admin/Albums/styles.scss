@@ -1,0 +1,45 @@
+#album-main-container {
+  width: 100%;
+  // border: 1px solid blueviolet;
+  overflow-y: scroll;
+}
+#album-form-info-container {
+  display: flex;
+}
+#add-album-container {
+  width: 50%;
+}
+
+#album-info-container {
+  width: 50%;
+  padding: 0px 0px 0px 30px;
+  box-sizing: border-box;
+}
+#song-checkbox-container {
+  display: flex;
+  align-items: center;
+  // border: 1px solid black;
+  margin: 10px 0px;
+  padding: 10px;
+  background-color: #eee;
+
+  input {
+    padding: 10px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  label {
+    font-size: 16px;
+    margin-left: 15px;
+    // line-height: 10px;
+    &:hover {
+      opacity: .5;
+      cursor: pointer;
+    }
+  }
+  &:hover {
+    opacity: .5;
+    cursor: pointer;
+  }
+}

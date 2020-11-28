@@ -6,5 +6,18 @@ import ButtonUpload from './ButtonUpload';
 import UploadProgress from './UploadProgress';
 import MultiLineInput from './MultiLineInput';
 import Loader from './Loader';
+import DateField from './DateField';
+import AudioPlayer from './AudioPlayer';
 
-export { Header, VectorComp, InputField, Button, ButtonUpload, UploadProgress, MultiLineInput, Loader };
+export {
+  Header,
+  VectorComp,
+  InputField,
+  Button,
+  ButtonUpload,
+  UploadProgress,
+  MultiLineInput,
+  Loader,
+  DateField,
+  AudioPlayer
+};

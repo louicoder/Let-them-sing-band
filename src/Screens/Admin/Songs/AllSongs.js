@@ -1,12 +1,52 @@
 import React from 'react';
-import { Button, ButtonUpload } from '../../../Components';
+import { useDispatch, useSelector } from 'react-redux';
+import { AudioPlayer, Button, ButtonUpload } from '../../../Components';
+import MenuOptions from '../../../Components/MenuOptions';
+import { Helpers } from '../../../Helper';
+import './styles.scss';
 
-const AllSongs = () => {
+const AllSongs = ({ addNewSong }) => {
+  const dispatch = useDispatch();
+  const { songs } = useSelector((state) => state.admin);
+  const [ state, setState ] = React.useState({ activeSong: {} });
+  React.useEffect(() => {
+    getAllSongs();
+  }, []);
+
+  const getAllSongs = () => {
+    dispatch.admin.getAllSongs((callback) => console.log(' Songs', callback));
+  };
   return (
-    <div>
-      <p>This is the all songs view</p>
-      <Button title="Text me" fileSelector acceptedFiles=".mp3" />
-      <ButtonUpload />
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <div id="all-songs-header-container">
+        <span>This is the all songs view</span>
+        <div id="all-songs-audio-container">
+          <Button title="Add new song" btnStyles={{ marginRight: '20px' }} onClick={addNewSong} />
+          <AudioPlayer file={state.activeSong.url} />
+        </div>
+      </div>
+      <div>
+        <table id="table">
+          <tr>
+            <th>Title</th>
+            <th>Release date</th>
+            <th>Album</th>
+          </tr>
+
+          {songs &&
+            songs.length &&
+            songs.map(({ title, albumTitle, releaseDate, ...rest }) => (
+              <tr
+                key={Helpers.randomStringGenerator()}
+                onClick={() => setState({ ...state, activeSong: { ...rest, title, albumTitle, releaseDate } })}
+              >
+                <td>{title}</td>
+                <td>{releaseDate}</td>
+                <td>{albumTitle}</td>
+              </tr>
+            ))}
+        </table>
+      </div>
     </div>
   );
 };

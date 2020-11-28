@@ -1,11 +1,11 @@
 import React from 'react';
 import './styles.scss';
 
-const InputField = ({ name, value, onChange, styles, title }) => {
+const InputField = ({ value, onChange, styles, title, placeholder }) => {
   return (
     <div className="input-field-container" style={styles}>
       <span>{title}</span>
-      <input value={value} onChange={({ target: value }) => onChange(name, value)} />
+      <input value={value} onChange={(e) => onChange(e.target.value)} placeholder={placeholder} />
     </div>
   );
 };
