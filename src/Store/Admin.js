@@ -75,6 +75,45 @@ export default {
           callback({ success: true });
         })
         .catch((error) => callback({ success: false, error }));
+    },
+
+    // Add team member
+    async registerTeamMember ({ payload, callback }) {
+      // get user account.
+      await db
+        .collection('team')
+        .add(payload)
+        .then((snap) => {
+          console.log('team member', snap.id);
+          callback({ success: true, id: snap.id });
+        })
+        .catch((error) => callback({ success: false, error }));
+    },
+
+    // Add team member
+    async updateTeamMember ({ payload, id, callback }) {
+      await db
+        .collection('team')
+        .doc(id)
+        .set(payload, { merge: true })
+        .then((snap) => {
+          // console.log('team member', snap.id);
+          callback({ success: true });
+        })
+        .catch((error) => callback({ success: false, error }));
+    },
+
+    // Add team member
+    async createTour ({ payload, callback }) {
+      // get user account.
+      await db
+        .collection('tours')
+        .add(payload)
+        .then((snap) => {
+          // console.log('team member', snap.id);
+          callback({ success: true, id: snap.id });
+        })
+        .catch((error) => callback({ success: false, error }));
     }
   })
 };

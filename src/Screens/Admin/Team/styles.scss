@@ -1,0 +1,26 @@
+#team-member-form-container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  // border: 1px solid black;
+
+  span {
+    &:first-child {
+      font-weight: 700;
+    }
+  }
+}
+
+#team-members-main-container {
+  width: 100%;
+  display: flex;
+  margin-top: 50px;
+}
+#team-members-upload-container {
+  // border: 1px solid black;
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  padding-left: 40px;
+  box-sizing: border-box;
+}

@@ -2,10 +2,12 @@ import React from 'react';
 import Songs from './Songs';
 import Albums from './Albums';
 import './styles.scss';
+import TeamMembers from './Team';
+import Tours from './Tours';
 
 const MainContent = ({ match: { params: { component } }, setProgress, setVisible }) => {
   // console.log('Main content', component);
-  const [ state, setState ] = React.useState({ component: '' });
+  const [ state, setState ] = React.useState({ component: 'songs' });
   // const loading = useSelector((state) => state.loading.effects.admin);
 
   React.useEffect(
@@ -21,6 +23,10 @@ const MainContent = ({ match: { params: { component } }, setProgress, setVisible
         return <Songs setProgress={setProgress} setVisible={setVisible} />;
       case 'albums':
         return <Albums />;
+      case 'team':
+        return <TeamMembers />;
+      case 'tours':
+        return <Tours />;
     }
   };
 

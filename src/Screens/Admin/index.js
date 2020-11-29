@@ -7,13 +7,29 @@ import './styles.scss';
 
 const Admin = (props) => {
   const [ state, setState ] = React.useState({ visible: false, progress: 0 });
-  const { getAllSongs, updateSong, addSong, registerAlbum, updateAlbum } = useSelector(
-    (state) => state.loading.effects.admin
-  );
+  const {
+    getAllSongs,
+    updateSong,
+    addSong,
+    registerAlbum,
+    updateAlbum,
+    registerTeamMember,
+    updateTeamMember,
+    createTour
+  } = useSelector((state) => state.loading.effects.admin);
   return (
     <div id="main-admin-container">
       <Loader
-        visible={getAllSongs || updateSong || addSong || registerAlbum || updateAlbum}
+        visible={
+          getAllSongs ||
+          updateSong ||
+          addSong ||
+          registerAlbum ||
+          updateAlbum ||
+          registerTeamMember ||
+          updateTeamMember ||
+          createTour
+        }
         progress={state.progress}
       />
       <SideBar {...props} />

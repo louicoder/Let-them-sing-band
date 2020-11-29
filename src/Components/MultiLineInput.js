@@ -4,7 +4,7 @@ import './styles.scss';
 const MultiLineInput = ({ placeholder, name, rows = 10, onChange, styles, title, value }) => {
   return (
     <div id="text-area-container">
-      {/* <span>{title}</span> */}
+      {/* <p>{title}</p> */}
       <textarea
         rows={rows}
         style={styles}

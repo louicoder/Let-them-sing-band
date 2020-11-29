@@ -10,7 +10,7 @@ const SideBar = ({ history }) => {
       {[
         { title: 'songs', to: '', icon: Icon.music },
         { title: 'albums', to: '', icon: Icon.album },
-        { title: 'songs', to: '', icon: Icon.music },
+        // { title: 'songs', to: '', icon: Icon.music },
         { title: 'team', to: '', icon: Icon.group },
         { title: 'tours', to: '', icon: Icon.bus },
         { title: 'reviews', to: '', icon: Icon.reviews }

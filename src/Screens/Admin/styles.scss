@@ -21,14 +21,19 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #eee;
+  background-color: #d1d2f955;
   margin-bottom: 10px;
   padding: 10px 20px;
   border-radius: 5px;
 
+  p {
+    color: #46237a;
+  }
+
   &:hover {
     cursor: pointer;
-    background-color: #ddd;
+    background-color: #d1d2f995;
+    // background-color: #ddd;
   }
 }
 
