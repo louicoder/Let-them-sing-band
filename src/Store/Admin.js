@@ -1,19 +1,21 @@
-import { firestore } from 'firebase';
-require('../Store/FirebaseConfig');
-const db = firestore();
+import { Firestore } from './FirebaseConfig';
+// require('../Store/FirebaseConfig');
+// const Firestore = Firestore();
 
 export default {
   state: { songs: [], images: [] },
   reducers: {
     setSongs (state, songs) {
       return { ...state, songs };
+    },
+    setReviews (state, reviews) {
+      return { ...state, reviews };
     }
   },
   effects: (dispatch) => ({
     async addSong ({ payload, callback }) {
       // get user account.
-      await db
-        .collection('songs')
+      await Firestore.collection('songs')
         .add(payload)
         .then((snap) => {
           // console.log('Snapshot', snap.id);
@@ -24,8 +26,7 @@ export default {
 
     async updateSong ({ payload, id, callback }) {
       // get user account.
-      await db
-        .collection('songs')
+      await Firestore.collection('songs')
         .doc(id)
         .set(payload, { merge: true })
         .then(() => {
@@ -36,15 +37,14 @@ export default {
 
     async getAllSongs (callback) {
       // get user account.
-      await db
-        .collection('songs')
+      await Firestore.collection('songs')
         .get()
         .then((snap) => {
           let songs = [];
           // callback({ success: true });
           snap.docs.forEach((doc) => songs.push({ ...doc.data(), id: doc.id }));
           dispatch.admin.setSongs(songs);
-          console.log('songs', songs);
+          // console.log('songs', songs);
           callback({ success: true, songs });
         })
         .catch((error) => callback({ success: false, error }));
@@ -53,11 +53,10 @@ export default {
     // Add album
     async registerAlbum ({ payload, callback }) {
       // get user account.
-      await db
-        .collection('albums')
+      await Firestore.collection('albums')
         .add(payload)
         .then((snap) => {
-          console.log('Snapshot', snap.id);
+          // console.log('Snapshot', snap.id);
           callback({ success: true, id: snap.id });
         })
         .catch((error) => callback({ success: false, error }));
@@ -66,9 +65,8 @@ export default {
     // Update Album
     async updateAlbum ({ payload, id, callback }) {
       // get user account.
-      console.log('reached upadte album');
-      await db
-        .collection('albums')
+      // console.log('reached upadte album');
+      await Firestore.collection('albums')
         .doc(id)
         .set(payload, { merge: true })
         .then(() => {
@@ -80,11 +78,10 @@ export default {
     // Add team member
     async registerTeamMember ({ payload, callback }) {
       // get user account.
-      await db
-        .collection('team')
+      await Firestore.collection('team')
         .add(payload)
         .then((snap) => {
-          console.log('team member', snap.id);
+          // console.log('team member', snap.id);
           callback({ success: true, id: snap.id });
         })
         .catch((error) => callback({ success: false, error }));
@@ -92,8 +89,7 @@ export default {
 
     // Add team member
     async updateTeamMember ({ payload, id, callback }) {
-      await db
-        .collection('team')
+      await Firestore.collection('team')
         .doc(id)
         .set(payload, { merge: true })
         .then((snap) => {
@@ -106,12 +102,47 @@ export default {
     // Add team member
     async createTour ({ payload, callback }) {
       // get user account.
-      await db
-        .collection('tours')
+      await Firestore.collection('tours')
         .add(payload)
         .then((snap) => {
           // console.log('team member', snap.id);
           callback({ success: true, id: snap.id });
+        })
+        .catch((error) => callback({ success: false, error }));
+    },
+
+    // Add image to gallery
+    async addToGallery ({ payload, callback }) {
+      // get user account.
+      await Firestore.collection('gallery')
+        .add(payload)
+        .then((snap) => {
+          callback({ success: true, id: snap.id });
+        })
+        .catch((error) => callback({ success: false, error }));
+    },
+
+    // Add image to gallery
+    async saveVideo ({ payload, callback }) {
+      // get user account.
+      await Firestore.collection('videos')
+        .add(payload)
+        .then((snap) => {
+          callback({ success: true, id: snap.id });
+        })
+        .catch((error) => callback({ success: false, error }));
+    },
+    async getReviews (callback) {
+      // get user account.
+      await Firestore.collection('reviews')
+        .get()
+        .then((snap) => {
+          let reviews = [];
+          // callback({ success: true });
+          snap.docs.forEach((doc) => reviews.push({ ...doc.data(), id: doc.id }));
+          dispatch.admin.setReviews(reviews);
+          // console.log('songs', songs);
+          callback({ success: true, reviews });
         })
         .catch((error) => callback({ success: false, error }));
     }

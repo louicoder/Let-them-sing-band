@@ -1,0 +1,130 @@
+home-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: yellow;
+}
+
+#cover-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #000;
+  margin: 0px;
+  width: 100%;
+  height: 100vh;
+}
+
+#cover-container img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#cover-container #inner-cover-container {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 70%;
+  margin: 0px auto;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.45);
+  padding: 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  bottom: 50px;
+  border-radius: 10px;
+}
+
+#cover-container #inner-cover-container h1 {
+  font-weight: 800;
+  font-size: 5em;
+  font-family: 'Permanent Marker', cursive;
+  color: #fff;
+}
+
+.hovered-button {
+  background-color: white;
+  color: #000;
+}
+
+#latest-album-container {
+  border: 1px solid black;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0px 10%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#header-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#latest-alnum-cover-info-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#latest-album-cover-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid black;
+  width: 50%;
+}
+
+#latest-album-info-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid black;
+  width: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+  #cover-container {
+    height: auto;
+    display: block;
+  }
+  #cover-container img {
+    height: auto;
+    width: 100%;
+  }
+  #cover-container #inner-cover-container {
+    width: 100%;
+    display: none;
+    border-radius: 0px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #cover-container #inner-cover-container .button-container {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=Styles.css.map */

@@ -8,10 +8,11 @@ const Tours = () => {
   const [ state, setState ] = React.useState({
     title: 'Test title',
     description: 'descripton for the tour',
-    date: '2020/30/01'
+    date: ''
   });
 
   const createTour = async () => {
+    if (!state.date) return alert('Date is not selected');
     const { title, description, date } = state;
     await dispatch.admin.createTour({
       payload: { title, description, date },

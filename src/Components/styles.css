@@ -1,0 +1,401 @@
+#navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.725);
+  z-index: 10;
+}
+
+#navigation a {
+  color: white;
+  padding: 20px;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-size: 14px;
+}
+
+#navigation a:hover {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.svg-container {
+  padding: 10px;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px .svg-container;
+}
+
+.hover-icon:hover {
+  background-color: #eee;
+  cursor: pointer;
+}
+
+.input-field-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.input-field-container span {
+  font-size: 14px !important;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #616060;
+}
+
+.input-field-container input {
+  padding: 20px 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 16px;
+  border: none;
+  background-color: #eee;
+  border-radius: 5px;
+  outline: none;
+}
+
+#button-container {
+  padding: 20px;
+  font-size: 14px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #68d8d6;
+  border: none;
+  font-weight: 600;
+  outline: none;
+}
+
+#button-container:hover {
+  cursor: pointer;
+}
+
+#button-upload-container {
+  background-color: #80ffe8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+}
+
+#button-upload-container label {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0a2463;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+#button-upload-container label:hover {
+  cursor: pointer;
+}
+
+#button-upload-container input {
+  display: none;
+}
+
+#text-area-container {
+  outline: none;
+  background-color: #eee;
+  resize: none;
+  font-size: 16px;
+  font-family: Helvetica;
+  background-color: #eee;
+  border: none;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+}
+
+#upload-progress-container {
+  height: 10px;
+  width: 100%;
+  background-color: #eee;
+  margin: 10px 0px;
+}
+
+#upload-progress-container #inner-progress-container {
+  height: 100%;
+  background-color: rgba(126, 87, 218, 0.596);
+}
+
+#select-option-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#select-option-container label {
+  font-size: 14px;
+}
+
+#select-option-container select {
+  padding: 15px;
+  font-size: 18px;
+}
+
+.custom-select {
+  position: relative;
+  font-family: Arial;
+  width: 200px;
+}
+
+.custom-select select {
+  display: none;
+  /*hide original SELECT element:*/
+}
+
+.select-selected {
+  background-color: DodgerBlue;
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,
+.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+#text-area-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#text-area-container span {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+#text-area-container text-area {
+  font-size: 14px;
+}
+
+#date-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 15px;
+}
+
+#date-container span {
+  font-size: 14px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #646363;
+}
+
+#date-container input {
+  background-color: #eee;
+  border: none;
+  padding: 20px;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+}
+
+#date-container input:hover {
+  cursor: pointer;
+  background-color: #ddd;
+}
+
+#default-button {
+  border-radius: 5px;
+}
+
+#footer-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #000;
+  height: 400px;
+  color: white;
+}
+
+#footer-container span.footer-span:first-child {
+  font-weight: 700;
+}
+
+#footer-lower-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-top: 1px solid #eee;
+  width: 50%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 30px 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 10px;
+}
+
+#footer-lower-container a {
+  margin: 0px 10px;
+  color: #999;
+}
+
+#footer-lower-container span.lower {
+  color: 'white';
+}
+
+.hovered-button {
+  background-color: white;
+  color: #000;
+}
+
+#menu-icon-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#mobile-menu {
+  display: none;
+}
+
+@media only screen and (max-width: 800px) {
+  #footer-lower-container {
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #nav-mobile a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 18px;
+    color: #000;
+    font-weight: 600;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 10px 10px;
+    text-decoration: none;
+    background-color: #eee;
+    margin-bottom: 5px;
+  }
+  #navigation {
+    display: none;
+  }
+  #mobile-menu {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    border-bottom: 1px solid #ddd;
+  }
+  #menu-icon-container p {
+    font-weight: bold;
+    margin-left: 10px;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

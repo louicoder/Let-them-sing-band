@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import { Header } from '../Components';
+import Footer from '../Components/Footer';
 import Hoc from './Hoc';
 import Routes from './Routes';
 
@@ -20,6 +21,7 @@ const App = (props) => {
         ))}
         <Redirect to="/" />
       </Switch>
+      <Footer />
     </Router>
   );
 };

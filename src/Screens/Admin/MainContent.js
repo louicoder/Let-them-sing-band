@@ -4,6 +4,9 @@ import Albums from './Albums';
 import './styles.scss';
 import TeamMembers from './Team';
 import Tours from './Tours';
+import Gallery from './Gallery';
+import Videos from './Videos';
+import Reviews from './Reviews';
 
 const MainContent = ({ match: { params: { component } }, setProgress, setVisible }) => {
   // console.log('Main content', component);
@@ -21,12 +24,20 @@ const MainContent = ({ match: { params: { component } }, setProgress, setVisible
     switch (state.component) {
       case 'songs':
         return <Songs setProgress={setProgress} setVisible={setVisible} />;
+      case 'gallery':
+        return <Gallery setProgress={setProgress} setVisible={setVisible} />;
       case 'albums':
         return <Albums />;
       case 'team':
         return <TeamMembers />;
       case 'tours':
         return <Tours />;
+      case 'reviews':
+        return <Reviews />;
+      case 'videos':
+        return <Videos />;
+      default:
+        return <Songs setProgress={setProgress} setVisible={setVisible} />;
     }
   };
 

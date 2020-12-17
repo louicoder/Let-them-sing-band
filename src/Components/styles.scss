@@ -2,14 +2,15 @@
   // background-color: red;
   display: flex;
   justify-content: center;
-  // position: absolute;
-  // top: 0;
-  background-color: rgba(255, 255, 255, .625);
-  border-bottom: 1px solid #eee;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .725);
+  // border-bottom: 1px solid #eee;
   z-index: 10;
   a {
     // color: green;
-    color: black;
+    color: rgba(255, 255, 255, 1);
     padding: 20px;
     text-decoration: none;
     text-transform: capitalize;
@@ -17,8 +18,9 @@
     &:hover {
       // border: 1px solid #eee;
       box-sizing: border-box;
+      color: rgba(255, 255, 255, .5);
       // font-weight: 500;
-      background-color: #eee;
+      // background-color: #eee;
     }
   }
 }
@@ -247,6 +249,109 @@
     &:hover {
       cursor: pointer;
       background-color: #ddd;
+    }
+  }
+}
+
+#default-button {
+  border-radius: 5px;
+}
+
+#footer-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  height: 400px;
+  color: white;
+
+  span.footer-span {
+    // font-size: 1.2em;
+    &:first-child {
+      font-weight: 700;
+    }
+  }
+}
+
+#footer-lower-container {
+  display: flex;
+  border-top: 1px solid #eee;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0px;
+  box-sizing: border-box;
+  margin-top: 10px;
+
+  a {
+    margin: 0px 10px;
+    color: #999;
+  }
+  span.lower {
+    color: 'white';
+    &:first-child {
+      // family
+    }
+  }
+}
+
+.hovered-button {
+  background-color: white;
+  color: #000;
+}
+
+#menu-icon-container {
+  display: flex;
+}
+
+#mobile-menu {
+  display: none;
+}
+
+// MOBILE VIEW CONFIGURATION CSS
+// ------------------------
+
+@media only screen and (max-width: 800px) {
+  #footer-lower-container {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  #nav-mobile {
+    // position: static;
+    a {
+      display: flex;
+      font-size: 18px;
+      color: #000;
+      font-weight: 600;
+      align-items: center;
+      // flex-direction: column;
+      padding: 10px 10px;
+      text-decoration: none;
+      background-color: #eee;
+      margin-bottom: 5px;
+    }
+  }
+
+  #navigation {
+    display: none;
+  }
+
+  #mobile-menu {
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    // background-color: rgba();
+    padding: 10px;
+    flex-direction: column;
+    border-bottom: 1px solid #ddd;
+  }
+  #menu-icon-container {
+    p {
+      font-weight: bold;
+      margin-left: 10px;
     }
   }
 }

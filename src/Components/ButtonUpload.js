@@ -3,13 +3,13 @@ import { Icon } from '../Helper';
 import './styles.scss';
 import SVGComp from './VectorComp';
 
-const ButtonUpload = ({ acceptedFiles, onChange, styles, file, title }) => {
+const ButtonUpload = ({ acceptedFiles, onChange, styles, file, title, labelColor = 'black' }) => {
   // console.log('fle', file);
   return (
     <div id="button-upload-container" for="file-upload" style={styles}>
-      <label for="file-upload">
+      <label for="file-upload" style={{ color: labelColor }}>
         {file && file.name ? file.name : `${title || 'Click to upload file'}`}
-        <SVGComp path={Icon.upload} />
+        <SVGComp path={Icon.upload} fill={labelColor} />
       </label>
       <input
         value={file}

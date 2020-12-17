@@ -12,7 +12,8 @@ const Loader = ({ visible, progress }) => {
         display: visible ? 'flex' : 'none',
         alignItems: 'center',
         justifyContent: 'center',
-        flexDirection: 'column'
+        flexDirection: 'column',
+        top: '0px'
       }}
     >
       {progress && (

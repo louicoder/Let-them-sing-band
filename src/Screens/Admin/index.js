@@ -15,7 +15,10 @@ const Admin = (props) => {
     updateAlbum,
     registerTeamMember,
     updateTeamMember,
-    createTour
+    createTour,
+    addToGallery,
+    saveVideo,
+    getReviews
   } = useSelector((state) => state.loading.effects.admin);
   return (
     <div id="main-admin-container">
@@ -28,7 +31,10 @@ const Admin = (props) => {
           updateAlbum ||
           registerTeamMember ||
           updateTeamMember ||
-          createTour
+          createTour ||
+          addToGallery ||
+          saveVideo ||
+          getReviews
         }
         progress={state.progress}
       />
