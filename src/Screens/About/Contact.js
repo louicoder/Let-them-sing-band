@@ -8,20 +8,7 @@ const Contact = ({ email, review, sendReview, onChange }) => {
 
   return (
     <div id="contact-container">
-      <div id="about-map-container">
-        {/* <GoogleMapReact
-          bootstrapURLKeys={{ key: 'AIzaSyAwnMCGKCU-ut0DwhLTQgz1v9OmKuc0mMY', region: 'ug' }}
-          defaultCenter={{
-            lat: 0.2755079,
-            lng: 32.6135808
-          }}
-          defaultZoom={{ zoom: 11 }}
-          onGoogleApiLoaded={({ maps, map }) => console.log('Loaded map', map)}
-          yesIWantToUseGoogleMapApiInternals
-        >
-          <AnyReactComponent lat={0.2755079} lng={32.6135808} text="My Marker" />
-        </GoogleMapReact> */}
-      </div>
+      <div id="about-map-container" />
       <div id="about-form-container">
         <span id="form">PLEASE SEND US A MESSAGE</span>
         <InputField
