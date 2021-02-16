@@ -6,5 +6,6 @@ import Home from './Home';
 import Music from './Music';
 import Admin from './Admin';
 import Tours from './Tours';
+import PayUp from './PayUp';
 
-export { About, Band, Contact, Gallery, Home, Music, Admin, Tours };
+export { About, Band, Contact, Gallery, Home, Music, Admin, Tours, PayUp };

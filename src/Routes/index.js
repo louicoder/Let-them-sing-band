@@ -9,7 +9,7 @@ const App = (props) => {
   console.log('pr spsp ', props);
   return (
     <Router>
-      {/* <Header /> */}
+      <Header />
       <Switch>
         {Routes.map(({ component, path, exact }) => (
           <Route

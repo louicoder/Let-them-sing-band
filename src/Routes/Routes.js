@@ -1,4 +1,4 @@
-import { About, Band, Contact, Gallery, Home, Music, Admin, Tours } from '../Screens';
+import { About, Band, Contact, Gallery, Home, Music, Admin, Tours, PayUp } from '../Screens';
 
 export default [
   { path: '/about', exact: true, component: About },

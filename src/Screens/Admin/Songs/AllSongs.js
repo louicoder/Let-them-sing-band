@@ -27,24 +27,26 @@ const AllSongs = ({ addNewSong }) => {
       </div>
       <div>
         <table id="table">
-          <tr>
-            <th>Title</th>
-            <th>Release date</th>
-            <th>Album</th>
-          </tr>
+          <tbody>
+            <tr>
+              <th>Title</th>
+              <th>Release date</th>
+              <th>Album</th>
+            </tr>
 
-          {songs &&
-            songs.length &&
-            songs.map(({ title, albumTitle, releaseDate, ...rest }) => (
-              <tr
-                key={Helpers.randomStringGenerator()}
-                onClick={() => setState({ ...state, activeSong: { ...rest, title, albumTitle, releaseDate } })}
-              >
-                <td>{title}</td>
-                <td>{releaseDate}</td>
-                <td>{albumTitle}</td>
-              </tr>
-            ))}
+            {songs &&
+              songs.length &&
+              songs.map(({ title, albumTitle, releaseDate, ...rest }) => (
+                <tr
+                  key={Helpers.randomStringGenerator()}
+                  onClick={() => setState({ ...state, activeSong: { ...rest, title, albumTitle, releaseDate } })}
+                >
+                  <td>{title}</td>
+                  <td>{releaseDate}</td>
+                  <td>{albumTitle}</td>
+                </tr>
+              ))}
+          </tbody>
         </table>
       </div>
     </div>

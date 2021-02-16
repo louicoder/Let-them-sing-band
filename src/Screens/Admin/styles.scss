@@ -54,3 +54,40 @@
   overflow-y: scroll;
   // background-color: rgb(247, 247, 247);
 }
+
+#admin-signin-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+
+  span {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  input {
+    width: 300px;
+    height: 50px;
+    // margin: 10px 0px;
+    border: none;
+    background-color: #eee;
+    font-size: 16px;
+    padding: 0px 20px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+
+  button {
+    background-color: indigo;
+    width: 300px;
+    border: none;
+    color: #fff;
+    height: 60px;
+    text-transform: capitalize;
+    font-size: 18px;
+  }
+}

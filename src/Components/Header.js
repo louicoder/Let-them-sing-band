@@ -10,10 +10,11 @@ const Header = ({ location: { pathname } }) => {
   const [ menuShowing, setMenuShowing ] = React.useState(false);
 
   React.useEffect(() => {
-    if (pathname.split('/').includes('admin')) setShowHeader(false);
+    if (pathname.split('/')[1] === 'admin') setShowHeader(false);
+    // console.log('path', pathname.split('/')[1]);
   }, []);
 
-  return showHeader && showHeader ? (
+  return showHeader ? (
     <div>
       <div id="navigation">
         <NavLink to={{ pathname: '/' }}>Home</NavLink>
